@@ -12,10 +12,6 @@ public enum Season{
 	WINTER, SPRING, SUMMER, FALL;
 		
 	
-	//Also we can add Fields, Methods and 
-	
-		
-	
 	public static void main(String[] args) {
 		Season s = Season.SUMMER;
 		System.out.println(Season.SUMMER); //SUMMER
