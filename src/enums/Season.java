@@ -12,7 +12,7 @@ public enum Season{
 	WINTER, SPRING, SUMMER, FALL;
 		
 	
-	//Also we canadd Fields, Methods and 
+	//Also we can add Fields, Methods and 
 	
 		
 	
