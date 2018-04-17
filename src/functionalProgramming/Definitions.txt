@@ -1,0 +1,6 @@
+Java defines a functional interface as an interface that contains a single abstract method. 
+It means, could contain static methods or default methods, but only one abstract
+
+A lambda expression is a block of code that gets passed around, like an anonymous method.
+
+
