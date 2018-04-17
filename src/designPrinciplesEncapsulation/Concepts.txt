@@ -1,0 +1,15 @@
+Encapsulation is the idea of combining fields and methods in
+a class such that the methods operate on the data, as opposed to the users of the class
+accessing the fi elds directly. In Java, it is commonly implemented with private instance
+members that have public methods to retrieve or modify the data, commonly referred to
+as getters and setters, respectively. 
+
+With encapsulation, a class is able to maintain certain invariants about its internal data.
+An invariant is a property or truth that is maintained even after the data is modified. For
+example, imagine that we are designing a new Animal class, and we have the following
+design requirements:
+ *Each animal has a non null , non empty species field
+ *Each animal has an age field that is greater than or equal to zero 
+ 
+ 
+///////////////
