@@ -1,0 +1,2 @@
+A JavaBean is a design principle for encapsulating data in an object in Java.
+
