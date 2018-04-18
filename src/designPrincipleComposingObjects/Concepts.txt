@@ -1,0 +1,13 @@
+Concepts of "Is a/an" and "Has a"
+
+"Is a"
+
+It reffers to a class that extends from another class, for example, we have two classes, one is Animal 
+and the another one is Lion, Lion extends from Animal, then, we can say, "Lion IS A/AN Animal"
+
+
+"Has a"
+
+Here we are talking about when a Class have an instance of another class as part of it's own fields,
+For example, we have the class called Tyre, and also we have the class called Car, but car have as one of it's fieldds
+a Tyre instance
