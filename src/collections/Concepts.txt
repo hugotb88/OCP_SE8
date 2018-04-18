@@ -1,0 +1,27 @@
+Array is not part of Collections.
+ArrayList implements the interface List.
+ArrayList can't contain primitives.
+
+
+//Diamond Operator <>
+Before Java 5 came out, you had to write code like the following
+and hope that programmers remembered that you wanted only String objects in there:
+
+List names = new ArrayList();
+
+This required a bit of mind reading. You had no way of knowing names were expected to
+contain String objects rather than StringBuilder or something else. In Java 5, you could 
+actually document this assumption in code through a new feature called generics! The
+compiler even helps enforce this assumption for you:
+
+List<String> names = new ArrayList<String>();
+
+When Java 7 came out, its developers made it even better. The previous statement
+required you to type six extra characters (String). Java 7 lets you shorten it a bit:
+
+List<String> names = new ArrayList<>();
+
+The shortened form uses the diamond operator. It is called that because <> looks like a
+diamond if you tilt your head to the side.
+You may laugh a bit about saving six characters. The diamond operator becomes more helpful
+if you have more complex code. 
