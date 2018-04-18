@@ -1,0 +1,81 @@
+static void printNames(List list) {
+	for (int i = 0; i < list.size(); i++) {
+		String name = (String) list.get(i); // class cast exception here
+		System.out.println(name);
+	}
+}
+
+public static void main(String[] args) {
+	List names = new ArrayList();
+	names.add(new StringBuilder("Webby"));
+	printNames(names);
+}
+
+This code throws a ClassCastException. Line 22 adds a StringBuilder to list. This is
+legal because a non-generic list can contain anything. However, line 16 is written to expect
+a specific class to be in there. It casts to a String, reflecting this assumption. Since the
+assumption is incorrect, the code throws a ClassCastException that java.lang
+.StringBuilder cannot be cast to java.lang.String.
+
+Generics fix this by allowing you to write and use parameterized types. You specify that
+you want an ArrayList of String objects. Now the compiler has enough information to
+prevent you from causing this problem in the first place:
+
+List<String> names = new ArrayList<String>();
+names.add(new StringBuilder("Webby")); // DOES NOT COMPILE
+
+Getting a compiler error is good. You’ll know right away that something is wrong rather
+than hoping to discover it later.
+
+///Generic Classes
+The syntax for introducing a generic is to declare a formal type parameter in angle brackets
+
+//////Naming Conventions for Generics/////
+
+A type parameter can be named anything you want. The convention is to use single
+uppercase letters to make it obvious that they aren’t real class names. The following are
+
+common letters to use:
+** E for an element
+** K for a map key
+** V for a map value
+** N for a number
+** T for a generic data type
+** S, U, V, and so forth for multiple generic types
+
+
+//Generic Interfaces
+Just like a class, an interface can declare a formal type parameter. For example, the following
+Shippable interface uses a generic type as the argument to its ship() 
+
+
+//Generic Methods
+Up until this point, you’ve seen formal type parameters declared on the class or interface
+level. It is also possible to declare them on the method level. This is often useful for static
+methods since they aren’t part of an instance that can declare the type. However, it is also
+allowed on non-static methods as well.
+
+In this example, the method uses a generic parameter:
+	public static <T> Crate<T> ship(T t) {
+ 		System.out.println("Preparing " + t);
+ 		return new Crate<T>();
+	}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+What you can't do with Generics
+
+**Call the constructor. new T() is not allowed because at runtime it would be new
+		Object().
+**Create an array of that static type. This one is the most annoying, but it makes sense
+		because you’d be creating an array of Objects.
+**Call instanceof. This is not allowed because at runtime List<Integer> and
+		List<String> look the same to Java thanks to type erasure.
+**Use a primitive type as a generic type parameter. This isn’t a big deal because you
+		can use the wrapper class instead. If you want a type of int, just use Integer.
+**Create a static variable as a generic type parameter. This is not allowed because the
+		type is linked to the instance of the class.
+		
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
