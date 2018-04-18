@@ -1,0 +1,52 @@
+A design pattern is an established general solution to a commonly occurring software
+development problem. The purpose of a design pattern is to leverage the wealth of
+knowledge of developers who have come before you in order to solve old problems that
+you may encounter easily. It also gives developers a common vocabulary in which they can
+discuss common problems and solutions. For example, if you say that you wrote getters/
+setters or implemented the singleton pattern, most developers will understand the structure
+of your code without having to get into the low level details. 
+
+
+
+Singleton
+ The first creational pattern we will discuss is the singleton pattern.
+
+Problem 
+How do we create an object in memory only once in an application and have it
+shared by multiple classes?
+
+Motivation 
+There are times when we want only one instance of a particular type of object
+in memory. For example, we might want to manage the amount of hay available for food to
+the zoo animals across all classes that use it. We could pass the same shared HayManager
+object to every class and method that uses it, although this would create a lot of extra
+pointers and could be diffi cult to manage if the object is used throughout the application.
+By creating a singleton HayManager object, we centralize the data and remove the need to
+pass it around the application.
+
+Solution 
+The singleton pattern is a creational pattern focused on creating only one
+instance of an object in memory within an application, sharable by all classes and threads
+within the application. The globally available object created by the singleton pattern is
+referred to as a singleton. Singletons may also improve performance by loading reusable
+data that would otherwise be time consuming to store and reload each time it is needed. 
+
+
+** Singletons in Java are created as private static
+variables within the class, often with the name instance
+
+** They are accessed via a single
+public static method, often named getInstance(),
+
+**  Finally, all constructors in a singleton class are marked private, which
+ensures that no other class is capable of instantiating another version of the class.
+
+By marking the constructors private, we have implicitly marked the class final. Recall
+that every class requires at least one constructor, with the default no argument constructor
+being added if none are provided. Furthermore, the first line of any constructor is a call to
+a parent constructor with the super() command. If all of the constructors are declared
+private in the singleton class, then it is impossible to create a subclass with a valid
+constructor; therefore, the singleton class is effectively final.
+
+
+
