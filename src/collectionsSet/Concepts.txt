@@ -1,0 +1,14 @@
+You use a set when you don’t want to allow duplicate entries.
+
+For example, you might want to keep track of the unique animals that you want to see at the zoo. You aren’t
+concerned with the order in which you see these animals, but there isn’t time to see
+them more than once 
+
+--- Set Implementations --
+A HashSet stores its elements in a hash table. This means that it uses the hashCode()
+method of the objects to retrieve them more efficiently.
+
+A TreeSet stores its elements in a sorted tree structure. The main benefit is that the set
+is always in sorted order. The tradeoff is that adding and checking if an element is present
+are both O(log n). TreeSet implements a special interface called NavigableSet, which
+lets you slice up the collection
