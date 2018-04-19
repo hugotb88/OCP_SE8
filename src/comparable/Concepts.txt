@@ -1,0 +1,29 @@
+ We discussed “order” for the TreeSet and TreeMap classes. For numbers, order is
+obvious—it is numerical order. For String objects, order is defi ned according to the
+Unicode character mapping
+
+ You can also sort objects that you create. Java provides an interface called Comparable .
+If your class implements Comparable , it can be used in these data structures that require
+comparison.
+
+There is also a class called Comparator , which is used to specify that you want
+to use a different order than the object itself provides. 
+
+
+---Comparable---
+
+ The Comparable interface has only one method. In fact, this is the entire interface:
+ 
+ public interface Comparable<T> {
+ 	public int compareTo(T o);
+ } 
+ 
+ 
+ We still need to know what the compareTo() method returns so that we can write our
+own. There are three rules to know:
+
+** The number zero is returned when the current object is equal to the argument to compareTo().
+** A number less than zero is returned when the current object is smaller than the argument
+to compareTo().
+** A number greater than zero is returned when the current object is larger than the argument
+to compareTo().
