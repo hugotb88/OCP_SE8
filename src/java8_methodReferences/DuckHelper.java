@@ -1,4 +1,4 @@
-package MethodReferences;
+package java8_methodReferences;
 
 /**
  * @author victor olvera

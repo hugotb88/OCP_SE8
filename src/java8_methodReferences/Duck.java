@@ -1,4 +1,4 @@
-package MethodReferences;
+package java8_methodReferences;
 
 import java.util.ArrayList;
 import java.util.Collections;
