@@ -1,0 +1,40 @@
+You use a map when you want to identify values by a key. For example, when you use the
+contact list in your phone, you look up “George” rather than looking through each phone
+number in turn.
+
+The main thing that all four classes have in common is that they all have keys and values.
+Beyond that, they each offer different functionality. We will look at the implementations
+that you need to know and the available methods.
+
+--Comparing Map implementations
+A HashMap stores the keys in a hash table. This means that it uses the hashCode() method
+of the keys to retrieve their values more efficiently.
+The main benefit is that adding elements and retrieving the element by key both have
+constant time. The tradeoff is that you lose the order in which you inserted the elements.
+Most of the time, you aren’t concerned with this in a map anyway. 
+
+If you were, you could use LinkedHashMap.
+
+A TreeMap stores the keys in a sorted tree structure. The main benefit is that the keys are
+always in sorted order. The tradeoff is that adding and checking if a key is present are both
+O(log n).
+
+A Hashtable is like Vector in that it is really old and thread-safe and that you won’t be
+expected to use it. It contains a lowercase t as a mistake from the olden days. All you have
+to do is be able to pick it out in a lineup. In the form of old school analogies, ArrayList is
+to Vector as HashMap is to Hashtable.
+
+
+//Methods
+void clear() 			Removes all keys and values from the map.
+boolean isEmpty() 		Returns whether the map is empty.
+int size() 				Returns the number of entries (key/value pairs) in the map.
+V get(Object key) 		Returns the value mapped by key or null if none is mapped.
+V put(K key, V value)	Adds or replaces key/value pair. Returns previous value or null.
+V remove(Object key) 	Removes and returns value mapped to key. Returns null if none.
+boolean
+containsKey(Object key)	Returns whether key is in map.
+boolean
+containsValue(Object)	Returns value is in map.
+Set<K> keySet() 		Returns set of all keys.
+Collection<V> values() 	Returns Collection of all values.
