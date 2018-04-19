@@ -1,0 +1,26 @@
+Java 8 introduces a new method called removeIf. Before this, we had the ability to remove
+a specified object from a collection or a specified index from a list. Now we can specify
+what should be deleted using a block of code.
+The method signature looks like this:
+
+boolean removeIf(Predicate<? super E> filter)
+
+It uses a Predicate, which is a lambda that takes one parameter and returns a boolean.
+Since lambdas use deferred execution, this allows specifying logic to run when that point in
+the code is reached. Let’s take a look at an example:
+
+4: List<String> list = new ArrayList<>();
+5: list.add("Magician");
+6: list.add("Assistant");
+7: System.out.println(list); // [Magician, Assistant]
+8: list.removeIf(s -> s.startsWith("A"));
+9: System.out.println(list); // [Magician]
+
+Line 8 shows how to remove all of the strings that begin with the letter A. This allows us
+to make the Assistant disappear.
+How would you replace line 8 with a method reference? Trick question—you can’t. Since
+startsWith takes a parameter that isn’t s, it needs to be specified “the long way.”
+There isn’t much to removeIf as long as long as you remember how Predicate works. 
+
+The most important thing to remember about removeIf is that it is one of two methods 
+that are on a collection and it takes a lambda parameter.
