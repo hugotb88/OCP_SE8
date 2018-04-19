@@ -1,0 +1,39 @@
+			Can contain					Elements		Has keys		Must add/remove
+Type		duplicate elements?			Ordered?		and values?		in specific order?
+---------------------------------------------------------------------------------------------
+List		Yes							Yes(by index)	No				No
+		
+Map			Yes (For values)			No				Yes				No
+	
+Queue		Yes							Yes				No				Yes
+	
+Set			No							No				No				No
+
+
+
+
+
+
+/// Collection attributes
+			Java Collections							Calls			Calls
+Type		Framework Interface			Sorted?			hashCode?		compareTo?
+----------------------------------------------------------------------------------------------------------------
+ArrayList 	List 						No 				No 				No
+ArrayDeque 	Queue 						No 				No 				No
+HashMap	 	Map 						No 				Yes 			No
+HashSet 	Set 						No 				Yes 			No
+Hashtable 	Map						 	No 				Yes 			No
+LinkedList 	List, Queue 				No 				No 				No
+Stack 		List 						No 				No 				No
+TreeMap 	Map 						Yes 			No 				Yes
+TreeSet 	Set 						Yes 			No 				Yes
+Vector 		List 						No 				No 				No
+
+
+
+TreeMap		—	no null keys
+Hashtable	—	no null keys or values
+TreeSet		—	no null elements
+ArrayDeque	—	no null elements
+
+

@@ -53,3 +53,7 @@ The shortened form uses the diamond operator. It is called that because <> looks
 diamond if you tilt your head to the side.
 You may laugh a bit about saving six characters. The diamond operator becomes more helpful
 if you have more complex code. 
+
+//null elements
+This means that TreeSet cannot contain null elements. It also means that TreeMap
+cannot contain null keys. Null values are OK.
