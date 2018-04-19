@@ -1,0 +1,77 @@
+In this chapter, we will also introduce method references to show how to make code more compact. Method
+references and lambdas are core Java structures now, which means that you should
+expect to see them in questions about other topics too. We will show you how to use the
+new removeIf(), forEach(), merge(), computeIfPresent(), and computeIfAbsent()
+methods.
+
+
+---Method References ---
+The operator :: (Yes, just like C++)
+
+Method references are a way to make the code shorter by reducing some of the code that
+can be inferred and simply mentioning the name of the method. Like lambdas, it takes time
+to get used to the new syntax
+
+There are four formats for method references:
+ ** Static methods
+ ** Instance methods on a particular instance
+ ** Instance methods on an instance to be determined at runtime
+ ** Constructors
+ 
+ Type							Syntax						Method Reference						Lambda expression
+--------------------------------------------------------------------------------------------------------------------------
+Reference to a static method	Class::staticMethod			String::valueOf	 						s -> String.valueOf(s)
+
+Reference to an instance 
+method of a particular object	instance::instanceMethod	s::toString	 							() -> “string”.toString()
+
+Reference to an instance 
+method of an arbitrary object   Class:instanceMethod		String::toString	 					s -> s.toString()
+of a particular type			
+
+Reference to a constructor		Class::new					String::new 							() -> new String()
+ 
+ 
+ 
+  Let’s look at some examples from the Java API. In each set, we show the lambda equivalent.
+Remember that none of these method references are actually called in the code that
+follows. They are simply available to be called in the future. Let’s start with a static method:
+
+ 14: Consumer<List<Integer>> methodRef1 = Collections::sort;
+ 15: Consumer<List<Integer>> lambda1 = l -> Collections.sort(l);
+ 
+ On line 14, we call a method with one parameter, and Java knows that it should create a
+lambda with one parameter and pass it to the method.
+
+ Wait a minute. We know that the sort method is overloaded. How does Java know that we
+want to call the version that omits the comparator? With both lambdas and method references,
+Java is inferring information from the context. In this case, we said that we were declaring a
+Consumer , which takes only one parameter. Java looks for a method that matches that description.
+
+ Next up is calling an instance method on a specific instance:
+ 
+ 16: String str = "abc";
+ 17: Predicate<String> methodRef2 = str::startsWith;
+ 18: Predicate<String> lambda2 = s -> str.startsWith(s); 
+ 
+Line 17 shows that we want to call string.startsWith() and pass a single parameter to
+be supplied at runtime. This would be a nice way of filtering the data in a list.
+Next, we call an instance method without knowing the instance in advance:
+
+19: Predicate<String> methodRef3 = String::isEmpty;
+20: Predicate<String> lambda3 = s -> s.isEmpty();
+
+Line 19 says the method that we want to call is declared in String. It looks like a static
+method, but it isn’t. Instead, Java knows that isEmpty is an instance method that does not
+take any parameters. Java uses the parameter supplied at runtime as the instance on which
+the method is called. 
+
+Finally, we have a constructor reference:
+
+21: Supplier<ArrayList> methodRef4 = ArrayList::new;
+22: Supplier<ArrayList> lambda4 = () -> new ArrayList();
+
+A constructor reference is a special type of method reference that uses new instead of a
+method, and it creates a new object. It expands like the method references you have seen
+so far. You’ll see method references again in the next chapter when we cover more types of
+functional interfaces.
