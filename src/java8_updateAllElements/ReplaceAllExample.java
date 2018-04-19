@@ -20,5 +20,7 @@ public class ReplaceAllExample {
 			List<Integer> list = Arrays.asList(1, 2, 3);
 			list.replaceAll(x -> x*2);
 			System.out.println(list); // [2, 4, 6]
+			
+			//The lambda uses deferred execution to increase the value of each element in the list.
 	}
 }
