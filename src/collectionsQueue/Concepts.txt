@@ -1,0 +1,22 @@
+You use a queue when elements are added and removed in a specific order. Queues are typically
+used for sorting elements prior to processing them. For example, when you want to
+buy a ticket and someone is waiting in line, you get in line behind that person. And if you
+are British, you get in the queue behind that person, making this really easy to remember!
+
+Unless stated otherwise, a queue is assumed to be FIFO (first-in, first-out). Some queue
+implementations change this to use a different order.
+ The other common format is LIFO (last-in, first-out.)
+ 
+ //Comparing Queue implementations
+ You saw LinkedList earlier in the List section. In addition to being a list, it is a doubleended
+queue. A double-ended queue is different from a regular queue in that you can insert
+and remove elements from both the front and back of the queue. Think, “Mr. President,
+come right to the front. You are the only one who gets this special treatment. Everyone else
+will have to start at the back of the line.”
+The main benefit of a LinkedList is that it implements both the List and Queue
+interfaces. The tradeoff is that it isn’t as efficient as a “pure” queue
+
+An ArrayDeque is a “pure” double-ended queue. It was introduced in Java 6, and it
+stores its elements in a resizable array. The main benefit of an ArrayDeque is that it is more
+efficient than a LinkedList. Deque is supposed to be pronounced “deck,” but many people,
+including the authors, say it wrong as “d-queue.
