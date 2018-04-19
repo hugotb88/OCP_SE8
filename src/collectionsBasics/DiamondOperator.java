@@ -1,4 +1,4 @@
-package collections;
+package collectionsBasics;
 
 /**
  * @author victor olvera
