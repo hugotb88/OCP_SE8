@@ -9,7 +9,7 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 
 /**
  * @author victor olvera
- * Example of interface Comparable
+ * Example of interface Comparator
  */
 public class Duck implements Comparable<Duck>{
 	
