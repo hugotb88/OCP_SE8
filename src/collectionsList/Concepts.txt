@@ -1,0 +1,34 @@
+You use a list when you want an ordered collection that can contain duplicate entries. Items
+can be retrieved and inserted at specific positions in the list based on an int index much
+like an array.
+
+ The main thing that all List implementations have in common is that they are ordered
+and allow duplicates. Beyond that, they each offer different functionality. 
+
+A LinkedList is special because it implements both List and Queue. It has all of the
+methods of a List. The main benefits of a LinkedList are that you can access, add, and remove from the
+beginning and end of the list in constant time. The tradeoff is that dealing with an arbitrary
+index takes linear time. This makes a LinkedList a good choice when you’ll be using
+it as Queue.
+
+There are also two old implementations. Way back when, Vector was the only choice
+if you wanted a list. In Java 1.2, ArrayList essentially replaced it. Vector does the same
+thing as ArrayList except more slowly. The benefit to that decrease in speed is that it
+is thread-safe.
+
+A Stack is a data structure where you add and remove elements from the top of the
+stack. Think about a stack of paper as an example. Like Vector, Stack hasn’t been used
+for new code in ages.
+
+Implementation of List
+
+AbstractList, 
+AbstractSequentialList, 
+ArrayList, 
+AttributeList, 
+CopyOnWriteArrayList, 
+LinkedList, 
+RoleList, 
+RoleUnresolvedList, 
+Stack, 
+Vector
