@@ -1,0 +1,31 @@
+ We discussed “order” for the TreeSet and TreeMap classes. For numbers, order is
+obvious—it is numerical order. For String objects, order is defi ned according to the
+Unicode character mapping
+
+ You can also sort objects that you create. Java provides an interface called Comparable .
+If your class implements Comparable , it can be used in these data structures that require
+comparison.
+
+There is also a class called Comparator , which is used to specify that you want
+to use a different order than the object itself provides. 
+
+
+---Comparator---
+
+ Sometimes you want to sort an object that did not implement Comparable, or you want to
+sort objects in different ways at different times.
+
+Comparator is a functional interface since there is only one abstract method to implement.
+This means that we can rewrite the comparator in the previous example as any of the
+following:
+
+Comparator<Duck> byWeight = (d1, d2) -> d1.getWeight()—d2.getWeight();
+Comparator<Duck> byWeight = (Duck d1, Duck d2) -> d1.getWeight()—d2.getWeight();
+Comparator<Duck> byWeight = (d1, d2) -> { return d1.getWeight()—d2.getWeight(); };
+Comparator<Duck> byWeight = (Duck d1, Duck d2) -> {return d1.getWeight()—d2.getWeight(); };
+
+
+We said that Comparator is a functional interface because it has a single abstract method.
+Comparable is also a functional interface since it also has a single abstract method. However,
+using a lambda for Comparable would be silly. The point of Comparable is to implement
+it inside the object being compared.
