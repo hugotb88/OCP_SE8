@@ -1,0 +1,4 @@
+Lambda expressions can access static variables, instance variables, effectively final
+method parameters, and effectively final local variables.
+
+As you remember, a functional interface has exactly one abstract method 
