@@ -1,0 +1,30 @@
+Functional								Return			Single Abstract	
+Interfaces			#Parameters			Type			Method			
+-------------------------------------------------------------------------                                        
+Supplier<T>				0           	T    			get
+		                                
+Consumer<T>				1(T)            void			accept
+	                                    
+BiSupplier<T,U>			2(T, U)         void			accept
+	                                    
+Predicate<T>			1(T)            boolean			test
+                                        
+BiPredicate<T, U>       2(T, U)         boolean			test
+                                        
+Function<T, R>          1(T)            R				apply
+                                        
+BiFunction<T, U, R>		2(T, U)         R				apply
+                                        
+UnaryOperator<T>        1(T)            T				apply
+											
+BynaryOperator<T>       2(T, T)         T				apply
+
+
+
+----Supplier----
+A Supplier is used when you want to generate or supply values without taking any input.
+The Supplier interface is defined as:
+
+@FunctionalInterface public class Supplier<T> {
+	public T get();
+}
