@@ -1,0 +1,34 @@
+Functional								Return			Single Abstract	
+Interfaces			#Parameters			Type			Method			
+-------------------------------------------------------------------------                                        
+Supplier<T>				0           	T    			get
+		                                
+Consumer<T>				1(T)            void			accept
+	                                    
+BiSupplier<T,U>			2(T, U)         void			accept
+	                                    
+Predicate<T>			1(T)            boolean			test
+                                        
+BiPredicate<T, U>       2(T, U)         boolean			test
+                                        
+Function<T, R>          1(T)            R				apply
+                                        
+BiFunction<T, U, R>		2(T, U)         R				apply
+                                        
+UnaryOperator<T>        1(T)            T				apply
+											
+BynaryOperator<T>       2(T, T)         T				apply
+
+
+
+----Consumer and BiConsumer----
+You use a Consumer when you want to do something with a parameter but not return anything.
+BiConsumer does the same thing except that it takes two parameters. Omitting the
+default methods, the interfaces are defined as follows:
+
+@FunctionalInterface public class Consumer<T> {
+ void accept(T t);
+}
+@FunctionalInterface public class BiConsumer<T, U> {
+ void accept(T t, U u);
+}
