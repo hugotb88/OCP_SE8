@@ -1,0 +1,42 @@
+Functional								Return			Single Abstract	
+Interfaces			#Parameters			Type			Method			
+-------------------------------------------------------------------------                                        
+Supplier<T>				0           	T    			get
+		                                
+Consumer<T>				1(T)            void			accept
+	                                    
+BiSupplier<T,U>			2(T, U)         void			accept
+	                                    
+Predicate<T>			1(T)            boolean			test
+                                        
+BiPredicate<T, U>       2(T, U)         boolean			test
+                                        
+Function<T, R>          1(T)            R				apply
+                                        
+BiFunction<T, U, R>		2(T, U)         R				apply
+                                        
+UnaryOperator<T>        1(T)            T				apply
+											
+BynaryOperator<T>       2(T, T)         T				apply
+
+
+
+----Unary Operator and Binary Operator----
+UnaryOperator and BinaryOperator are a special case of a function. They require all type
+parameters to be the same type. A UnaryOperator transforms its value into one of the
+same type. For example, incrementing by one is a unary operation. In fact, UnaryOperator
+extends Function. A BinaryOperator merges two values into one of the same type. Adding
+two numbers is a binary operation. Similarly, BinaryOperator extends BiFunction.
+Omitting any default or static methods, the interfaces are defined as follows:
+
+@FunctionalInterface public class UnaryOperator<T>
+ extends Function<T, T> { }
+ 
+@FunctionalInterface public class BinaryOperator<T>
+ extends BiFunction<T, T, T> { }
+ 
+This means that method signatures look like this:
+
+T apply(T t);
+
+T apply(T t1, T t2);
