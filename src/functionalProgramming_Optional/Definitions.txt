@@ -1,0 +1,15 @@
+Suppose that you are taking an introductory Java class and receive scores of 90 and 100
+on the first two exams. Now, we ask you what your average is. An average is calculated by
+adding the scores and dividing by the number of scores, so you have (90+100)/2. This gives
+190/2, so you answer with 95. Great!
+Now suppose that you are taking your second class on Java, and it is the first day of
+class. We ask you what your average is in this class that just started. You haven’t taken any
+exams yet, so you don’t have anything to average. It wouldn’t be accurate to say that your
+average is zero. That sounds bad, and it isn’t true. There simply isn’t any data, so you don’t
+have an average yet.
+How do we express this “we don’t know” or “not applicable” answer in Java? Starting
+with Java 8, we use the Optional type. An Optional is created using a factory. You can
+either request an empty Optional or pass a value for the Optional to wrap. Think of an
+Optional as a box that might have something in it or might instead be empty.
+
+
