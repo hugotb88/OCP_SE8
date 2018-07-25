@@ -1,0 +1,23 @@
+ You can perform a terminal operation without any intermediate operations but not the
+other way around. This is why we will talk about terminal operations fi rst. Reductions are
+a special type of terminal operation where all of the contents of the stream are combined
+into a single primitive or Object. For example, you might have an int or a Collection .
+
+Method                   What Happens for Infinite Streams              Return Value            Reduction
+------------------------------------------------------------------------------------------------------------
+allMatch()                 Sometimes terminates                         boolean                 No
+/anyMatch()
+/noneMatch()
+
+collect()                  Does not terminate                           Varies                  Yes
+
+count()                    Does not terminate                           long                    Yes
+
+findAny()                  Terminates                                   Optional<T>             No
+/findFirst()
+
+forEach()                  Does not terminate                           void                    No
+
+min()/max()                Does not terminate                           Optional<T>             Yes
+
+reduce()                   Does not terminate                           Varies                  Yes
