@@ -1,0 +1,56 @@
+A stream in Java is a sequence of data
+
+A stream pipeline is the operations that run on a
+stream to produce a result
+
+Finite streams have a limit
+
+its just like an assembly line
+
+Another important feature of an assembly line is that each person touches each element
+to do their operation and then that piece of data is gone. It doesn’t come back. The next
+person deals with it at that point
+
+
+This is different than the lists and queues that you saw in
+the last chapter. With a list, you can access any element at any time. With a queue, you are
+limited in which elements you can access, but all of the elements are there. With streams,
+the data isn’t generated up front—it is created when needed
+
+Many things can happen in the assembly line stations along the way. In programming,
+these are called stream operations. Just like with the assembly line, operations occur in a
+pipeline. Someone has to start and end the work, and there can be any number of stations
+in between. After all, a job with one person isn’t an assembly line! There are three parts to
+a stream pipeline:
+
+■ Source: Where the stream comes from.
+■ Intermediate operations: Transforms the stream into another one. There can be as few
+or as many intermediate operations as you’d like. Since streams use lazy evaluation, the
+intermediate operations do not run until the terminal operation runs.
+■ Terminal operation: Actually produces a result. Since streams can be used only once,
+the stream is no longer valid after a terminal operation completes.
+
+
+
+Scenario                             For Intermediate Operations?               For Terminal Operations?
+
+Required part of a useful                       No                                      Yes
+pipeline
+
+Can exist multiple times in a                   Yes                                     No
+pipeline?
+
+Return type is a stream type?                   Yes                                     No
+
+Executed upon method call?                      No                                      Yes
+
+Stream valid after call?                        Yes                                     No
+
+
+
+A factory typically has a foreman who oversees the work. Java serves as the foreman
+when working with stream pipelines. This is a really important role, especially when
+dealing with lazy evaluation and infinite streams.
+
+In Java, the Stream interface is in the java.util.stream package. There are a few ways to
+create a finite stream.
