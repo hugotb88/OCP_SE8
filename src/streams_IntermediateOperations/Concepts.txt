@@ -1,0 +1,43 @@
+ Unlike a terminal operation, intermediate operations deal with infi nite streams simply by
+returning an infi nite stream. Since elements are produced only as needed, this works fi ne.
+The assembly line worker doesn’t need to worry about how many more elements are coming
+through and instead can focus on the current element.
+
+filter()
+ The filter() method returns a Stream with elements that match a given expression
+
+
+distinct()
+ The distinct() method returns a stream with duplicate values removed. The duplicates do
+not need to be adjacent to be removed. As you might imagine, Java calls equals() to determine
+whether the objects are the same
+
+
+limit() and skip()
+ The limit() and skip() methods make a Stream smaller. They could make a fi nite stream
+smaller, or they could make a fi nite stream out of an infi nite stream.
+
+
+map()
+ The map() method creates a one-to-one mapping from the elements in the stream to the elements
+of the next step in the stream.
+ This one looks more complicated than the others you have seen. It uses the lambda
+expression to fi gure out the type passed to that function and the one returned. The return
+type is the stream that gets returned
+The map() method on streams is for transforming data. Don’t confuse it
+with the Map interface, which maps keys to values.
+
+flatMap()
+The flatMap() method takes each element in the stream and makes any elements it contains
+top-level elements in a single stream. This is helpful when you want to remove empty
+elements from a stream or you want to combine a stream of lists. We are showing you the
+method signature for consistency with the other methods, just so you don’t think we are
+hiding anything.
+
+sorted()
+The sorted() method returns a stream with the elements sorted. Just like sorting arrays,
+Java uses natural ordering unless we specify a comparator.
+
+peek()
+ The peek() method is our fi nal intermediate operation. It is useful for debugging because it
+allows us to perform a stream operation without actually changing the stream.
