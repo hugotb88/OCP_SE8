@@ -1,0 +1,49 @@
+Lambdas can reference static variables, instance variables, effectively final parameters, and
+effectively final local variables. A functional interface has a single abstract method. You
+must know the functional interfaces:
+
+■ Supplier<T>: Method get() returns T
+■ Consumer<T>: Method accept(T t) returns void
+■ BiConsumer<T>: Method accept(T t, U u) returns void
+■ Predicate<T>: Method test(T t) returns boolean
+■ BiPredicate<T>: Method test(T t, U u) returns boolean
+■ Function<T, R>: Method apply(T t) returns R
+■ BiFunction<T, U, R>: Method apply(T t, U u) returns R
+224 Chapter 4 ■ Functional Programming
+■ UnaryOperator<T>: Method apply(T t) returns T
+■ BinaryOperator<T>: Method apply(T t1, T t2) returns T
+
+An Optional can be empty or store a value. You can check if it contains a value with
+ifPresent() and get() the value inside. There are also three methods that take functional
+interfaces as parameters: ifPresent(Consumer c), orElseGet(Supplier s), and
+orElseThrow(Supplier s). There are three optional types for primitives: DoubleSupplier,
+IntSupplier, and LongSupplier. These have the methods getDouble(), getInt(), and
+getLong(), respectively.
+
+A stream pipeline has three parts. The source is required, and it creates the data in
+the stream. There can be zero or more intermediate operations, which aren’t executed
+until the terminal operation runs. Examples of intermediate operations include filter(),
+flatMap(), and sorted(). Examples of terminal operations include allMatch(), count(),
+and forEach().
+
+There are three primitive streams: DoubleStream, IntStream, and LongStream. In
+addition to the usual Stream methods, they have range() and rangeClosed(). The call
+range(1, 10) on IntStream and LongStream creates a stream of the primitives from 1 to
+9. By contrast, rangeClosed(1, 10) creates a stream of the primitives from 1 to 10.
+The primitive streams have math operations including average(), max(), and sum(). They also
+have summaryStatistics() to get many statistics in one call.
+
+There are also functional
+interfaces specific to streams. Except for BooleanSupplier, they are all for double, int, and
+long primitives as well.
+You can use a Collector to transform a stream into a traditional collection. You can
+even group fields to create a complex map in one line. Partitioning works the same way as
+grouping, except that the keys are always true and false. A partitioned map always has
+two keys even if the value is empty for the key.
+You should review the tables in the chapter.
+
+You absolutely must memorize Table 4.1.
+You should memorize Table 4.6 and Table 4.7 but be able to spot incompatibilities, such as
+type differences, if you can’t memorize these two. Finally, remember that streams are lazily
+evaluated. They take lambdas or method references as parameters, which occur later when
+the method is run.
