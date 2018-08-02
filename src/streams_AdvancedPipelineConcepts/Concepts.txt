@@ -1,0 +1,8 @@
+What happen when you have a list with two elements, then creates an stream of that list,
+then you add a new element and finally, you count the elements of the stream?
+
+Will you show 2 or 3 as result?
+
+The answer is 3, because, as you remember, the streams are created as an assembly line, the info is created in the moment you need it, it menas, is lazy,
+When you create the stream, contains two elements, but, when you make the count, pipeline starts and the stream looks in the soyurce, then founds 3 elements.
+
