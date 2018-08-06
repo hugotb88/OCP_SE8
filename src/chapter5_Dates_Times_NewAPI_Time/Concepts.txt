@@ -1,0 +1,7 @@
+In Java 8, Oracle completely revamped how we work with dates and times. You can still
+write code the old way, but those classes aren’t on the exam.
+
+You need an import to work with the date and time classes. Most of them are in the
+java.time package. To use it, add this import to your program:
+import java.time.*; // import time classes
+
