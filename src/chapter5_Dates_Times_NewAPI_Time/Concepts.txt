@@ -5,3 +5,19 @@ You need an import to work with the date and time classes. Most of them are in t
 java.time package. To use it, add this import to your program:
 import java.time.*; // import time classes
 
+
+Periods and Durations
+
+You’ve probably noticed by now that a Period is a day or more of time. There is also
+Duration, which is intended for smaller units of time. For Duration, you can specify the
+number of days, hours, minutes, seconds, or nanoseconds. And yes, you could pass 365
+days to make a year, but you really shouldn’t—that’s what Period is for.
+Conveniently, Duration roughly works the same way as Period, except it is used with
+objects that have time. Remember that a Period is output beginning with a P. Duration
+is output beginning with PT, which you can think of as a period of time. A Duration
+is stored in hours, minutes, and seconds. The number of seconds includes fractional
+seconds
+
+Both classes can be used to represent an amount of time or determine the difference between two dates.
+The main distinction between the two classes is that Period uses date-based values, while Duration uses time-based values.
+
