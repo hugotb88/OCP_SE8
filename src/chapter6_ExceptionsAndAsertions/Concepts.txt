@@ -1,0 +1,97 @@
+An exception is Java’s way of saying, “I give up. I don’t know what to do right now. You
+deal with it.” When you write a method, you can either deal with the exception or make it
+the calling code’s problem.
+
+The happy path is when nothing goes wrong. With bad code, there might not be
+a happy path. For example, your code might have a bug where it always throws a
+NullPointerException. In this case, you have an exception path but not a happy path,
+because execution can never complete normally
+
+
+Categories of Exceptions
+
+Remember that a runtime exception, or unchecked
+exception, may be caught, but it is not required that it be caught.
+After all, if you had to check for NullPointerException, every piece of code that you wrote would need to deal
+with it.
+
+A checked exception is any class that extends Exception but is not a runtime
+exception. Checked exceptions must follow the handle or declare rule where they are either
+caught or thrown to the caller.
+
+
+ An error is fatal and should not be caught by the program.
+While it is legal to catch an error, it is not a good practice
+
+
+--------------------------------------------------
+Examples
+
+On the OCA, you had to know about only a handful of exceptions. As a review, these
+exceptions were as follows:
+
+ArithmeticException Thrown by the JVM when code attempts to divide by zero.
+
+ArrayIndexOutOfBoundsException Thrown by the JVM when code uses an illegal
+index to access an array.
+
+ClassCastException Thrown by the JVM when an attempt is made to cast an object to
+a subclass of which it is not an instance.
+
+IllegalArgumentException Thrown by the program to indicate that a method has
+been passed an illegal or inappropriate argument.
+
+NullPointerException Thrown by the JVM when there is a null reference where an
+object is required.
+
+NumberFormatException Thrown by the program when an attempt is made to convert
+a string to a numeric type, but the string doesn’t have an appropriate format.
+
+
+
+---------------------------------------------------
+Throw vs. Throws
+
+ The exam might test whether you are paying attention to the difference between throw and
+throws . Remember that throw means an exception is actually being thrown and throws
+indicate that the method merely has the potential to throw that exception
+
+
+---------------------------------------------------
+ Using Multi-catch
+
+ When something goes wrong in a program, it is common to log the error and convert it to a
+different exception type.
+
+
+
+----------------------------------------------------
+Putting It Together
+You’ve learned two new rules for the order in which code runs in a try-with-resources
+statement:
+■ Resources are closed after the try clause ends and before any catch/finally clauses.
+■ Resources are closed in the reverse order from which they were created.
+Based on these rules, can you figure out what this code prints?
+public class Auto implements AutoCloseable {
+ int num;
+ Auto(int num) { this.num = num; }
+ public void close() {
+ System.out.println("Close: " + num);
+ }
+ public static void main(String[] args) {
+ try (Auto a1 = new Auto(1); Auto a2 = new Auto(2)) {
+ throw new RuntimeException();
+ } catch (Exception e) {
+ System.out.println("ex");
+ } finally {
+ System.out.println("finally");
+ }
+ }
+}
+Since the resources are closed in the reverse order from which they were opened, we have
+Close: 2 and then Close: 1. After that, the catch block and finally block are run—just
+as they are in a regular try statement. The output is
+Close: 2
+Close: 1
+ex
+finally
