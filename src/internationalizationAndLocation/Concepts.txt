@@ -1,0 +1,38 @@
+Many applications need to work for different countries and with different languages. For
+example, consider the sentence “The zoo is holding a special event on 4/1/15 to look at animal
+behaviors.” When is the event? In the United States, it is on April 1. However a British
+reader would interpret this as January 4. A British reader might also wonder why we didn’t
+write “behaviours".
+
+-------------------------------------------------------
+
+Internationalization
+Is the process of designing your program so it can be adapted. This
+involves placing strings in a property file and using classes like DateFormat so that the right
+format is used based on user preferences. (Create a properties file)
+
+
+-------------------------------------------------------
+
+Localization
+Means actually supporting multiple locales. Oracle defines a locale as “a
+specific geographical, political, or cultural region.” You can think of a locale as being like
+a language and country pairing. Localization includes translating strings to different languages
+
+
+-------------------------------------------------------
+Since internationalization and localization are such long words, they are often abbreviated
+as internationalizationAndLocation.i18n and l10n
+
+
+-------------------------------------------------------
+Using a Resource Bundle
+ A resource bundle contains the local specifi c objects to be used by a program. It is like a
+map with keys and values. The resource bundle can be in a property fi le or in a Java class.
+A property fi le is a fi le in a specific format with key/value pairs.
+
+Our zoo program has been very successful. We are now getting requests to use it at three
+more zoos! We already have support for United States–based zoos. We now need to add
+Zoo de La Palmyre in France, the Greater Vancouver Zoo in English-speaking Canada, and
+Zoo de Granby in French-speaking Canada.
+We immediately realized that we are going to need to internationalize our program.
