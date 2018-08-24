@@ -11,9 +11,9 @@ public class EffectivelyFinal {
 	int two = one;
 	two++;
 	int three;if(one==4)
-		three=3;
-	else 
-		three=4;
+	three=3;
+	else
+	three=4;
 	int four = 4;
 
 	class Inner {
