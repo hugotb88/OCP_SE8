@@ -1,0 +1,35 @@
+A file is record within a file system that stores user and system data. Files are organized
+using directories. A directory is a record within a file system that contains files as well
+as other directories. For simplicity, we often refer to a directory reference as a file record
+throughout this chapter, since it is stored in the file system with a unique name and with
+attributes similar to a file. For example, a file and directory can both be renamed with the
+same operation. Finally, the root directory is the topmost directory in the file system, from
+which all files and directories inherit. In Windows, it is denoted with a drive name such as
+c:\, while on Linux it is denoted with a single forward slash /.
+
+
+Creating a File Object
+A File object often is initialized with String containing either an absolute or relative path
+to the file or directory within the file system. The absolute path of a file or directory is the
+full path from the root directory to the file or directory, including all subdirectories that
+contain the file or directory. Alternatively, the relative path of a file or directory is the path
+from the current working directory to file or directory.
+
+exists()                     Returns true if the file or directory exists.
+getName()                    Returns the name of the file or directory denoted by this path.
+getAbsolutePath()            Returns the absolute pathname string of this path.
+isDirectory()                Returns true if the file denoted by this path is a directory.
+isFile()                     Returns true if the file denoted by this path is a file.
+length()                     Returns the number of bytes in the file. For performance reasons, the
+                             file system may allocate more bytes on disk than the file actually uses.
+lastModified()               Returns the number of milliseconds since the epoch when the file
+                             was last modified.
+delete()                     Deletes the file or directory. If this pathname denotes a directory,
+                             then the directory must be empty in order to be deleted.
+renameTo(File)               Renames the file denoted by this path.
+mkdir()                      Creates the directory named by this path.
+mkdirs()                     Creates the directory named by this path including any nonexistent
+                             parent directories.
+getParent()                  Returns the abstract pathname of this abstract pathname’s parent
+                             or null if this pathname does not name a parent directory.
+listFiles()                  Returns a File[] array denoting the files in the directory.
