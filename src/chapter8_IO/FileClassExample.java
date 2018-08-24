@@ -12,6 +12,8 @@ import java.nio.file.Paths;
  *  An instance of a File class represents the pathname of a particular fi le or directory on
  * the fi le system. The File class cannot read or write data within a fi le, although it can be
  * passed as a reference to many stream classes to read or write data,
+ *
+ * Note that the File class creates and object, not the file itself
  */
 public class FileClassExample {
 
@@ -37,6 +39,8 @@ public class FileClassExample {
         System.out.println(file4.getAbsolutePath());
 
         System.out.println(Paths.get("zoo.txt"));
+        System.out.println();
+
     }
 
 }

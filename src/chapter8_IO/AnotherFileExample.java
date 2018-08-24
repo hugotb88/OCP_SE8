@@ -5,6 +5,7 @@ import java.io.File;
 /**
  * @author Victor Hugo Olvera Cruz
  * @subject
+ * Note that the File class creates and object, not the file itself
  */
 public class AnotherFileExample {
     public static void main(String[] args) {
