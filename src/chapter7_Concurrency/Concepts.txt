@@ -1,0 +1,48 @@
+  The idea behind multi-threaded processing is to allow an application or group
+  of applications to execute multiple tasks at the same time. This allows tasks waiting for
+  other resources to give way to other processing requests.
+
+   The Concurrency API has grown over the years to include numerous classes and
+  frameworks to assist you in developing complex, multi-threaded applications. In this
+  chapter, we will introduce you to the concept of threads and provide numerous ways to
+  manage threads using the Concurrency API
+
+
+  A thread
+  is the smallest unit of execution that can be scheduled by the operating system. A process
+  is a group of associated threads that execute in the same, shared environment. It follows,
+  then, that a single-threaded process is one that contains exactly one thread, whereas a
+  multi-threaded process is one that contains one or more threads.
+  By shared environment, we mean that the threads in the same process share the same
+  memory space and can communicate directly with one another. Yes, you will finally see how
+  static variables can be useful for performing complex, multi-threaded tasks
+
+
+   Understanding Thread Concurrency
+   At the start of the chapter, we mentioned that multi-threaded processing allows operating
+  systems to execute threads at the same time. The property of executing multiple threads
+  and processes at the same time is referred to as concurrency .
+
+   Operating systems use a thread scheduler to determine which threads should be currently
+  executing
+  When a thread’s allotted time is complete but the thread has not finished processing, a
+  context switch occurs. A context switch is the process of storing a thread’s current state and
+  later restoring the state of the thread to continue execution.
+
+Finally, a thread can interrupt or supersede another thread if it has a higher thread
+priority than the other thread. A thread priority is a numeric value associated with a thread
+that is taken into consideration by the thread scheduler when determining which threads
+should currently be executing.
+
+---------------------------------------------------------------------------------------------
+Runnable
+
+Runnable for short, is a functional interface that takes no arguments and returns no data.
+The following is the definition of the Runnable interface:
+
+
+@FunctionalInterface public interface Runnable {
+ void run();
+}
+
+
