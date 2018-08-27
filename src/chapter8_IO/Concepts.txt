@@ -33,3 +33,64 @@ mkdirs()                     Creates the directory named by this path including 
 getParent()                  Returns the abstract pathname of this abstract pathname’s parent
                              or null if this pathname does not name a parent directory.
 listFiles()                  Returns a File[] array denoting the files in the directory.
+
+
+
+
+----------------------------------------------------------------------------
+Streams
+
+ The contents of a fi le may be accessed or written via a stream , which is a list of data elements
+presented sequentially. Streams should be conceptually thought of as a long, nearly never-ending
+“stream of water” with data presented one “wave” at a time.
+
+
+Byte Streams vs. Character Streams
+The java.io API defines two sets of classes for reading and writing streams: those with
+Stream in their name and those with Reader/Writer in their name. For example, the
+java.io API defines both a FileInputStream class as well as a FileReader class, both of
+which define a stream that reads a file. The difference between the two classes is based on
+how the stream is read or written.
+Differences between Streams and Readers/Writers
+1. The stream classes are used for inputting and outputting all types of binary or byte
+data.
+2. The reader and writer classes are used for inputting and outputting only character and
+String data
+
+
+
+Input and Output
+Most Input stream classes have a corresponding Output class and vice versa. For example,
+the FileOutputStream class writes data that can be read by a FileInputStream. If you
+understand the features of a particular Input or Output stream class, you should naturally
+know what its complementary class does
+
+
+Low-Level vs. High-Level Streams
+Another way that you can familiarize yourself with the java.io API is by segmenting
+streams into low-level and high-level streams.
+A low-level stream connects directly with the source of the data, such as a file, an array,
+or a String. Low-level streams process the raw data or resource and are accessed in a
+direct and unfiltered manner. For example, a FileInputStream is a class that reads file data
+one byte at a time.
+Alternatively, a high-level stream is built on top of another stream using wrapping.
+Wrapping is the process by which an instance is passed to the constructor of another
+class and operations on the resulting instance are filtered and applied to the original
+instance.
+
+
+
+Stream Base Classes
+The java.io library defines four abstract classes that are the parents of all stream classes
+defined within the API: InputStream, OutputStream, Reader, and Writer.
+
+
+Review of java.io Class Properties
+■ A class with the word InputStream or OutputStream in its name is used for reading or
+writing binary data, respectively.
+■ A class with the word Reader or Writer in its name is used for reading or writing
+character or string data, respectively.
+■ Most, but not all, input classes have a corresponding output class.
+■ A low-level stream connects directly with the source of the data.
+■ A high-level stream is built on top of another stream using wrapping.
+■ A class with Buffered in its name reads or writes data in gro
